@@ -1,0 +1,11 @@
+### cookie/sessionStroage/localStorage
+共同点：都是保存在浏览器端，且同源的
+区别
+请求携带
+cookie数据始终在同源的http请求中携带（即使不需要），而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存
+存储大小
+cookie数据不能超过4k，每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识，sessionStorage和localStorage能达到5M
+数据有效期不同
+sessionStorage仅在当前浏览器窗口关闭前有效，localStorage不主动删除始终有效，cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭
+作用域不同
+sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面，localStorage和cookie在所有同源窗口中都是共享的
